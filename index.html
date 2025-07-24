@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Second Brain - จัดการชีวิตทุกด้าน</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="sidebar">
+      <h2>Second Brain</h2>
+      <ul>
+        <li onclick="showSection('notes')">บันทึกย่อ (Notes)</li>
+        <li onclick="showSection('tasks')">งานที่ต้องทำ (Tasks)</li>
+        <li onclick="showSection('calendar-section')">ปฏิทิน (Calendar)</li>
+        <li onclick="showSection('habits')">นิสัย (Habits)</li>
+        <li onclick="showSection('knowledge')">ฐานความรู้ (Knowledge)</li>
+      </ul>
+    </div>
+    <div id="main">
+      <!-- Notes Section -->
+      <div id="notes" class="section active">
+        <h1>บันทึกย่อ</h1>
+        <textarea
+          id="note-input"
+          placeholder="พิมพ์บันทึกย่อที่นี่..."
+        ></textarea>
+        <button onclick="addNote()">เพิ่มบันทึก</button>
+        <ul id="note-list"></ul>
+      </div>
+
+      <!-- Tasks Section -->
+      <div id="tasks" class="section">
+        <h1>งานที่ต้องทำ</h1>
+        <input type="text" id="task-input" placeholder="พิมพ์งานที่ต้องทำ..." />
+        <button onclick="addTask()">เพิ่มงาน</button>
+        <ul id="task-list"></ul>
+      </div>
+
+      <!-- Calendar Section -->
+      <div id="calendar-section" class="section">
+        <h1>ปฏิทิน</h1>
+        <div id="calendar-controls">
+          <button onclick="prevMonth()">เดือนก่อนหน้า</button>
+          <span id="month-year"></span>
+          <button onclick="nextMonth()">เดือนถัดไป</button>
+        </div>
+        <div id="calendar"></div>
+        <input type="text" id="event-input" placeholder="พิมพ์เหตุการณ์..." />
+        <input type="date" id="event-date" />
+        <button onclick="addEvent()">เพิ่มเหตุการณ์</button>
+      </div>
+
+      <!-- Habits Section -->
+      <div id="habits" class="section">
+        <h1>นิสัย</h1>
+        <input
+          type="text"
+          id="habit-input"
+          placeholder="พิมพ์นิสัยที่ต้องการติดตาม..."
+        />
+        <button onclick="addHabit()">เพิ่มนิสัย</button>
+        <ul id="habit-list"></ul>
+      </div>
+
+      <!-- Knowledge Section -->
+      <div id="knowledge" class="section">
+        <h1>ฐานความรู้</h1>
+        <p>
+          ส่วนนี้สำหรับจัดการความรู้ เช่น ลิงก์หรือข้อมูลสำคัญ (ยังไม่สมบูรณ์
+          สามารถขยายได้)
+        </p>
+        <!-- สามารถเพิ่มฟีเจอร์เพิ่มเติมที่นี่ -->
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
